@@ -1,4 +1,30 @@
-# campaign-montecarlo
+![Predictor-logo](https://github.com/user-attachments/assets/5f83978a-f0e5-4971-8a00-35d657507f58)# campaign-montecarlo
+![Uploading P<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="#f0f0f0"/>
+  
+  <!-- Bar chart bars -->
+  <rect x="60" y="120" width="20" height="40" fill="#2E5090"/>
+  <rect x="90" y="100" width="20" height="60" fill="#3A67B2"/>
+  <rect x="120" y="80" width="20" height="80" fill="#4A7ED6"/>
+  
+  <!-- Checkmark/vote symbol -->
+  <path d="M85 50 L95 65 L120 30" 
+        stroke="#2E5090" 
+        stroke-width="8" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        fill="none"/>
+  
+  <!-- Circular progress ring -->
+  <circle cx="100" cy="100" r="90" 
+          stroke="#2E5090" 
+          stroke-width="4"
+          fill="none"
+          stroke-dasharray="565"
+          stroke-dashoffset="140"/>
+</svg>
+redictor-logo.svg…]()
 
 # Project Name
 Predictor
