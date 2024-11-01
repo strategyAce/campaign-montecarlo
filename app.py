@@ -10,7 +10,8 @@ def main():
 
     # Login page
     if not st.session_state.logged_in:
-        st.title("Login to Access Monte Carlo Election App")
+        st.image("Campaign-Predictor.png", width=200)
+        st.title("Login to Predictor Tool")
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
 
