@@ -23,7 +23,8 @@ def main():
                 st.error("Invalid username or password.")
     else:
         # App Header
-        st.title("Monte Carlo Election Analysis Tool")
+        st.image("Campaign-Predictor.png", width=200)
+        st.title("Predictor Tool")
         st.subheader("This is a product of Strategy Ace LLC")
         st.write("rev:v0.1...date:09/29/2024....notes:Initial StreamLit Release")
         st.divider()
