@@ -1,5 +1,5 @@
 """
-Election Analysis Tool
+Election Prediction Tool
 -------------------
 A Streamlit application for election outcome analysis using Monte Carlo simulation.
 
@@ -9,7 +9,7 @@ This package provides tools for:
 - Visualizing results
 """
 
-from src import authenticate, monte_carlo_simulation, plot_election_results
+from src import authenticate, simulation, visualization
 
 __version__ = "0.1.0"
 __author__ = "Strategy Ace LLC"
@@ -19,6 +19,6 @@ __copyright__ = "Copyright 2024 Strategy Ace LLC"
 # Define public API
 __all__ = [
     'authenticate',
-    'monte_carlo_simulation',
-    'plot_election_results'
+    'simulation',
+    'visualization'
 ]
