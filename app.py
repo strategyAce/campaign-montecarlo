@@ -35,26 +35,35 @@ def main():
 
         # Input Collection
         st.write("Enter Fixed Simulation Variables")
-        num_runs = st.number_input("Enter Number of Runs", min_value=0, value=0, step=1)
+        num_runs = st.slider("Enter Number of Runs", 0, 2000, 1000,step=1)
         RegDems = st.number_input("Enter Number of Registered Democrats (fixed variable)", min_value=0, value=0, step=1)
         RegReps = st.number_input("Enter Number of Registered Republicans (fixed variable)", min_value=0, value=0, step=1)
         RegNPAs = st.number_input("Enter Number of Registered NPAs/Others (fixed variable)", min_value=0, value=0, step=1)
-
+        st.divider()
         st.write("Enter Normal Distribution Monte Carlo Variables")
-        DemMean = st.number_input("Enter mean value of Dem turnout %", min_value=0, value=0, step=1)
-        DemStd = st.number_input("Enter standard deviation of Dem turnout %", min_value=0, value=0, step=1)
-        RepMean = st.number_input("Enter mean value of Republican turnout %", min_value=0, value=0, step=1)
-        RepStd = st.number_input("Enter standard deviation of Republican turnout %", min_value=0, value=0, step=1)
-        NPAMean = st.number_input("Enter mean value of NPA/Other turnout %", min_value=0, value=0, step=1)
-        NPAStd = st.number_input("Enter standard deviation of NPA/Other turnout %", min_value=0, value=0, step=1)
-
+        # Create two columns
+        col1, col2 = st.columns(2)
+        # Add content to the first column
+        with col1:
+            DemMean = st.number_input("Enter mean value of Dem turnout %", min_value=0.00, max_value=100.00, value=0.00, step=1.00)
+            RepMean = st.number_input("Enter mean value of Republican turnout %", min_value=0.00, max_value=100.00,value=0.00, step=1.00)            
+            NPAMean = st.number_input("Enter mean value of NPA/Other turnout %", min_value=0.00, max_value=100.00, value=0.00, step=1.00)
+        # Add content to the second column
+        with col2:
+            DemStd = st.number_input("Enter standard deviation of Dem turnout %", min_value=0.00, value=1.00, step=1.00)
+            RepStd = st.number_input("Enter standard deviation of Republican turnout %", min_value=0.00, value=1.00, step=1.00)
+            NPAStd = st.number_input("Enter standard deviation of NPA/Other turnout %", min_value=0.00, value=1.00, step=1.00)
+        st.divider()
         st.write("Enter Uniform Distribution Monte Carlo Variables")
-        DemLow = st.number_input("Enter the lower % value of Democrats that vote for your candidate", min_value=0, value=0, step=1)
-        DemHigh = st.number_input("Enter the upper % value of Democrats that vote for your candidate", min_value=0, value=0, step=1)
-        RepLow = st.number_input("Enter the lower % value of Republicans that vote for your candidate", min_value=0, value=0, step=1)
-        RepHigh = st.number_input("Enter the upper % value of Republicans that vote for your candidate", min_value=0, value=0, step=1)
-        NPALow = st.number_input("Enter the lower % value of NPA/Others that vote for your candidate", min_value=0, value=0, step=1)
-        NPAHigh = st.number_input("Enter the upper % value of NPA/Others that vote for your candidate", min_value=0, value=0, step=1)
+        Demvalues = st.slider("Enter the lower and upper % values of Democrats that vote for your candidate",0,100,(25,75))
+        DemLow = Demvalues[0]
+        DemHigh = Demvalues[1]
+        Repvalues = st.slider("Enter the lower and upper % values of Republicans that vote for your candidate",0,100,(25,75))
+        RepLow = Repvalues[0]
+        RepHigh = Repvalues[1]
+        NPAvalues = st.slider("Enter the lower and upper % values of NPA/Others that vote for your candidate",0,100,(25,75))
+        NPALow = NPAvalues[0]
+        NPAHigh = NPAvalues[1]
 
         if st.button("Run Simulation"):
             # Perform the Monte Carlo analysis
@@ -66,15 +75,11 @@ def main():
             
             if election_results is not None:
                 st.write("Simulation Complete")
-                st.write("Here are the results:")
-                
+            st.divider()
+            st.subheader("Simulation Results")
                 # Calculate statistics
                 Winvalues = election_results[election_results['% of Votes'] > 50.0]
                 Lossvalues = election_results[election_results['% of Votes'] <= 50.0]
-                
-                # Display results
-                st.write('Percentage of Wins = ', len(Winvalues)/num_runs * 100)
-                st.write('Percentage of Loss = ', len(Lossvalues)/num_runs * 100)
                 
                 # Display average votes
                 win_stats = {
@@ -88,8 +93,15 @@ def main():
                     'Loss Mean NPA Votes': Lossvalues['NPA Votes'].mean()
                 }
                 
-                st.write(pd.DataFrame([win_stats]).T)
-                st.write(pd.DataFrame([loss_stats]).T)
+                # Display results
+                col1,col2 = st.columns(2)
+                with col1:
+                    st.write('Percentage of Wins = ', len(Winvalues)/num_runs * 100)
+                    st.write(pd.DataFrame([win_stats]).T)
+                with col2:
+                    st.write('Percentage of Loss = ', len(Lossvalues)/num_runs * 100)
+                    st.write(pd.DataFrame([loss_stats]).T)
+                st.write("Full Simualtion Results Data")
                 st.write(election_results)
                 
                 # Plot results
