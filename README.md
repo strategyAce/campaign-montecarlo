@@ -80,7 +80,7 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 5. Open a Pull Request
 
 ## 📃 License
-This project is licensed under the MIT License - see the LICENSE.MD file for details.
+This project is licensed under Strategy Ace LLC Proprietary License Agreement - see the LICENSE.MD file for details.
 
 ## 👥 Team
 - Developer Name - Jared Mannino [GitHub](https://github.com/username)
