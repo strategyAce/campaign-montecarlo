@@ -1,7 +1,7 @@
 # Proprietary Software License Agreement
 
 **Effective Date:** 11/12/2024
-**Software Name:** Visualizer Application ("Visualizer") 
+**Software Name:** Predictor Application ("Predictor") 
 **Owner:** Strategy Ace LLC 
 
 ---
