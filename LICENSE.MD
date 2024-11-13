@@ -1,7 +1,7 @@
 # Proprietary Software License Agreement
 
-**Effective Date:** [Insert Date]  
-**Software Name:** [Your Software Tool Name]  
+**Effective Date:** 11/12/2024
+**Software Name:** Visualizer Application ("Visualizer") 
 **Owner:** Strategy Ace LLC 
 
 ---
