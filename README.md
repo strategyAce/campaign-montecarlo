@@ -1,8 +1,7 @@
 
 ![Campaign-Predictor](https://github.com/user-attachments/assets/0e396da0-57a2-4753-b2fd-7ce247767c71)
 
-# Project Name
-Predictor
+# Predictor Application ("Predictor")
 
 ## 📝 Description
 A clear and concise description of your project. Answer the following questions:
