@@ -3,6 +3,11 @@ from src.auth import authenticate
 from src.simulation import monte_carlo_simulation
 from src.visualization import plot_election_results
 
+# Path to assets
+BANNER_PATH = "StratAceBanner_Logo.png"
+LOGO_PATH = "Campaign-Predictor.png"
+url = "https://strategyace.win/"
+
 def main():
     # User session for login state
     if "logged_in" not in st.session_state:
@@ -10,8 +15,15 @@ def main():
 
     # Login page
     if not st.session_state.logged_in:
-        st.image("Campaign-Predictor.png", width=200)
-        st.title("Login to Predictor Tool")
+        st.image(BANNER_PATH,width=550)
+        st.subheader(" ")
+        col1,col2 = st.columns(2)
+        with col1:
+            st.title("Predictor Tool")
+            st.subheader("Run predictions that can give your campaign an edge up on the competition")
+        with col2:
+            st.image(LOGO_PATH,width=225)
+        st.title("Login")
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
 
@@ -24,9 +36,15 @@ def main():
                 st.error("Invalid username or password.")
     else:
         # App Header
-        st.image("Campaign-Predictor.png", width=200)
-        st.title("Predictor Tool")
-        st.subheader("This is a product of Strategy Ace LLC")
+        st.image(BANNER_PATH,width=550)
+        st.subheader(" ")
+        col1,col2 = st.columns(2)
+        with col1:
+            st.title("Campaign Predictor Tool")
+            st.subheader("Run predictions that can give your campaign an edge up on the competition")
+        with col2: 
+            st.image(LOGO_PATH, width=250)  
+        st.write("This is a product of Strategy Ace LLC")
         st.write("rev:v0.1...date:09/29/2024....notes:Initial StreamLit Release")
         st.divider()
 
@@ -107,6 +125,10 @@ def main():
                 # Plot results
                 fig = plot_election_results(election_results)
                 st.pyplot(fig)
+
+                st.divider()
+                st.image(BANNER_PATH,width=300)
+                st.write(url)
 
 if __name__ == "__main__":
     main()
