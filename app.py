@@ -116,11 +116,11 @@ def main():
                 col1,col2 = st.columns(2)
                 with col1:
                     Pwin = len(Winvalues)/num_runs * 100
-                    st.write('Percentage of Wins = {Pwin:.2f}%')
+                    st.write(f'Percentage of Wins = {Pwin:.2f}%')
                     st.write(pd.DataFrame([win_stats]).T)
                 with col2:
                     Ploss = len(Lossvalues)/num_runs * 100
-                    st.write('Percentage of Loss = {Ploss:.2f}%')
+                    st.write(f'Percentage of Loss = {Ploss:.2f}%')
                     st.write(pd.DataFrame([loss_stats]).T)
                 st.write("Full Simualtion Results Data")
                 st.write(election_results)
