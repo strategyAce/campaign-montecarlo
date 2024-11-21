@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 from src.auth import authenticate
 from src.simulation import monte_carlo_simulation
 from src.visualization import plot_election_results
