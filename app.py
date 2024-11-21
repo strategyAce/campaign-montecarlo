@@ -93,8 +93,8 @@ def main():
             
             if election_results is not None:
                 st.write("Simulation Complete")
-            st.divider()
-            st.subheader("Simulation Results")
+                st.divider()
+                st.subheader("Simulation Results")
                 # Calculate statistics
                 Winvalues = election_results[election_results['% of Votes'] > 50.0]
                 Lossvalues = election_results[election_results['% of Votes'] <= 50.0]
