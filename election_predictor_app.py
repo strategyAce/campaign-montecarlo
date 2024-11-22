@@ -37,8 +37,8 @@ def main():
                 st.error("Invalid username or password.")
     else:
         # Sidebar with expandable User Guide section
-        with st.sidebar("📘 User Guide / Instructions"):
-            st.write("""
+        with st.sidebar.title("📘 User Guide / Instructions"):
+            st.sidebar.write("""
             Welcome to the Campaign Predictor Tool!
 
             **Tool Overview:**
