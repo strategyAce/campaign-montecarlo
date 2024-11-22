@@ -16,7 +16,7 @@ def main():
 
     # Login page
     if not st.session_state.logged_in:
-        st.image(BANNER_PATH,use_container_width=True)
+        st.image(BANNER_PATH, use_container_width=True)
         st.subheader(" ")
         col1,col2 = st.columns(2)
         with col1:
@@ -66,7 +66,7 @@ def main():
             """)
             
         # App Header
-        st.image(BANNER_PATH,use_container_width=True)
+        st.image(BANNER_PATH, use_container_width=True)
         st.subheader(" ")
         col1,col2 = st.columns(2)
         with col1:
