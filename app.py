@@ -36,6 +36,35 @@ def main():
             else:
                 st.error("Invalid username or password.")
     else:
+        # Sidebar with expandable User Guide section
+        with st.sidebar.expander("📘 User Guide / Instructions", expanded=False):
+            st.write("""
+            Welcome to the Campaign Predictor Tool!
+
+            **Tool Overview:**
+            The tool was built to simulate different election outcomes for 2 partisan candidates running against each other. The tool uses party demographic statistics from your election district as well as turnout data. It then runs as many simulations as you set and randomly alters the input parameters to give you a wide range of outcomes.
+    
+            **Simulation Inputs:**
+            1. Input Fixed Simulation Variables
+            1.1 Number of Runs
+               This number dictates how many simulations are performed. The higher the number the longer the app may take to produce results. Its best practice to set to around 100 runs when doing a quick analysis and 1000 runs when looking for more accurate and thorough results.
+            1.2 Number of Registered Voters
+               These values should come directly from your official local government election officials.
+               
+            2. Define Monte Carlo Variables for Normal and Uniform distributions.
+            2.1 Turnout Values
+               These values are calculated from historical election data. Please consult with your data team to calculate these values.
+               The values in the "Normal" section will be randomly selected based on a normal (or gaussian) probability distribution function.
+            2.2 Vote Share Values
+               These values are best guesses on how many voters from each political party will vote for you candidate. You will need to set a minimum and maximum percentage.
+               The values in this "Uniform" section are randomly selected between the min and max. All values have equal probabiltiy of being selected between the min and max.
+    
+            **Results:**
+            - Simulation results include win/loss probabilities and detailed statistics.
+            - A vertical bar plot will visualize show how many simulations your candidate won a certain percentage of votes. All simulations where your candidate received 50%+1 vote will be considered a win.
+            - WARNING: These result are probabilities!! Anything can happen in real life. It's important to take actions to increase the probabilities of your candidate winnning.
+            """)
+            
         # App Header
         st.image(BANNER_PATH,width=550)
         st.subheader(" ")
@@ -46,7 +75,7 @@ def main():
         with col2: 
             st.image(LOGO_PATH, width=250)  
         st.write("This is a product of Strategy Ace LLC")
-        st.write("rev:v0.1...date:09/29/2024....notes:Initial StreamLit Release")
+        st.write("Version: BETAv0.1...date:09/29/2024")
         st.divider()
 
         # Initialize election_results to None
