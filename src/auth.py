@@ -12,4 +12,6 @@ def authenticate(username: str, password: str) -> bool:
     Returns:
         bool: True if credentials are valid, False otherwise
     """
+    USERNAME = os.environ.get('USERNAME')
+    PASSWORD = os.environ.get('PASSWORD')
     return username == USERNAME and password == PASSWORD
