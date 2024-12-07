@@ -1,7 +1,5 @@
 # Hardcoded username and password
 # In production, these should be stored securely
-USERNAME = "ClientX"
-PASSWORD = "stratbomb"
 
 def authenticate(username: str, password: str) -> bool:
     """
