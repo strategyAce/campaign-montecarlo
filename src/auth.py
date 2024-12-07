@@ -1,5 +1,6 @@
 # Hardcoded username and password
 # In production, these should be stored securely
+import os
 
 def authenticate(username: str, password: str) -> bool:
     """
