@@ -83,7 +83,7 @@ def main():
 
         # Input Collection
         st.write("Enter Fixed Simulation Variables")
-        num_runs = st.slider("Enter Number of Runs", 0, 2000, 1000,step=1)
+        num_runs = st.slider("Enter Number of Runs", 0, 2000, 1000,step=50)
         RegDems = st.number_input("Enter Number of Registered Democrats (fixed variable)", min_value=0, value=0, step=1)
         RegReps = st.number_input("Enter Number of Registered Republicans (fixed variable)", min_value=0, value=0, step=1)
         RegNPAs = st.number_input("Enter Number of Registered NPAs/Others (fixed variable)", min_value=0, value=0, step=1)
