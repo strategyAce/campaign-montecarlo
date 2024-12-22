@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 from src.auth import authenticate
 from src.simulation import monte_carlo_simulation
 from src.visualization import plot_election_results
@@ -131,14 +132,14 @@ def main():
                 
                 # Display average votes
                 win_stats = {
-                    'Win Mean Dem Votes': Winvalues['Dem Votes'].mean(),
-                    'Win Mean Rep Votes': Winvalues['Rep Votes'].mean(),
-                    'Win Mean NPA Votes': Winvalues['NPA Votes'].mean()
+                    'Win Mean Dem Votes': np.round(Winvalues['Dem Votes'].mean()),
+                    'Win Mean Rep Votes': np.round(Winvalues['Rep Votes'].mean()),
+                    'Win Mean NPA Votes': np.round(Winvalues['NPA Votes'].mean())
                 }
                 loss_stats = {
-                    'Loss Mean Dem Votes': Lossvalues['Dem Votes'].mean(),
-                    'Loss Mean Rep Votes': Lossvalues['Rep Votes'].mean(),
-                    'Loss Mean NPA Votes': Lossvalues['NPA Votes'].mean()
+                    'Loss Mean Dem Votes': np.round(Lossvalues['Dem Votes'].mean()),
+                    'Loss Mean Rep Votes': np.round(Lossvalues['Rep Votes'].mean()),
+                    'Loss Mean NPA Votes': np.round(Lossvalues['NPA Votes'].mean())
                 }
                 
                 # Display results
