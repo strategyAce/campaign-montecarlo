@@ -35,9 +35,9 @@ def monte_carlo_simulation(iterations: int,
         NPAVoterShare = np.floor(np.random.uniform(NPALow, NPAHigh+1))/100
         
         # Calculate estimated # of voters per party
-        DemVoters = np.floor(np.random.normal(DemMean, DemStd)*RegDems)
-        RepVoters = np.floor(np.random.normal(RepMean, RepStd)*RegReps)
-        NPAVoters = np.floor(np.random.normal(NPAMean, NPAStd)*RegNPAs)
+        DemVoters = np.floor((np.random.normal(DemMean,DemStd)/100)*RegDems)
+        RepVoters = np.floor((np.random.normal(RepMean,RepStd)/100)*RegReps)
+        NPAVoters = np.floor((np.random.normal(NPAMean,NPAStd)/100)*RegNPAs)
         
         # Calculate totals per party
         DemVotes = np.max([0, np.floor(DemVoters*DemVoterShare)])
